@@ -1,0 +1,116 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto';
+}
+
+body {
+    background-color: #ececec;
+    padding: 50px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+#form-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#form-container {
+    background-color: #fff;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    width: 70%;
+    padding: 50px;
+    border-radius: 10px;
+}
+
+.form-input-box {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+label {
+    font-size: 18px;
+    color: #555555;
+    font-weight: 400;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"],
+input[type="file"] {
+    border: 1px solid #9b9b9b;
+    border-radius: 5px;
+    padding: 4px 7px;
+    font-size: 22px;
+    font-weight: 300;
+    color: #555555;
+}
+
+input[type="button"] {
+    border: 0px;
+    border-radius: 5px;
+    padding: 8px 10px;
+    font-size: 18px;
+    font-weight: 400;
+    background-color: #3c68a4;
+    color: #fff;
+}
+
+.radio-input-box {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.radio-input-option-box {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.form-input-box-2-column {
+    display: flex;
+    gap: 10px;
+}
+
+.form-input-box-values {
+    display: flex;
+    gap: 5px;
+}
+
+.ability-box {
+    background-color: #3c68a4;
+    width: fit-content;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 15px;
+    padding: 4px 4px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.fa-xmark {
+    display: none;
+}
+
+#hidden-abilities {
+    display: none;
+}
+
+.ability-box:hover .fa-xmark {
+    display: block;
+    width: fit-content;
+}

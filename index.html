@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/form.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@400;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/681753a9b2.js" crossorigin="anonymous"></script>
+    <script src="scripts/form.js"></script>
+    <title>Candidatura à Vaga de Emprego</title>
+</head>
+<body>
+    <section id="form-section">
+        <div id="form-container">
+            <form>
+
+                <!-- NAME -->
+                <div class="form-input-box">
+                    <label for="name">Nome Completo</label>
+                    <input type="text" name="name" id="name" minlength="1" maxlength="100" placeholder="Nome completo" required>
+                </div>
+
+                <!-- BIRTHDATE -->
+                <div class="form-input-box">
+                    <label for="name">Data de Nascimento</label>
+                    <input type="date" name="birthdate" id="birthdate" required>
+                </div>
+
+                <!-- GENRE -->
+                <div class="form-input-box">
+                    <label for="name">Gênero</label>
+                    <div class="radio-input-box">
+                        <div class="radio-input-option-box">
+                            <input type="radio" name="genre" id="genre-non-binary">
+                            <label for="genre-non-binary">Não Binário</label>
+                        </div>
+                        <div class="radio-input-option-box">
+                            <input type="radio" name="genre" id="genre-male">
+                            <label for="genre-male">Masculino</label>
+                        </div>
+                        <div class="radio-input-option-box">
+                            <input type="radio" name="genre" id="genre-female">
+                            <label for="genre-female">Feminino</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ABILITIES -->
+                <div class="form-input-box">
+                    <label for="abilities">Habilidades</label>
+                    <div class="form-input-box-2-column">
+                        <input type="text" name="abilities" id="abilities" onkeypress="addAbilityClick(event)">
+                        <input type="button" value="+ Adicionar" onclick="addAbility()">
+                    </div>
+                    <div id="abilities-added-box" class="form-input-box-values"></div>
+                    <input type="text" name="hidden-abilities" id="hidden-abilities">
+                </div>
+            </form>
+        </div>
+    </section>
+</body>
+</html>
+
+
+
+
+
+<!--
+        Nome completo - texto
+        Data de nascimento - data
+        Gênero - radio
+
+        Conhecimentos - Multiseleção
+        LinkedIn - texto
+        GitHub - texto
+        Portfólio - texto
+        Apresentação resumida - textarea
+        Curriculo - arquivo
+        Educação - grupo
+            Instituição - texto
+            Tipo - seleção
+            Curso - texto
+            Início - data
+            Término - data
+        Experiência profissional - grupo
+            Empresa - texto
+            Cargo - texto
+            Início - data
+            Término - data
+        Como ficou sabendo da vaga - seleção
+        Possui indicação - radio
+            Se sim
+                Quem indicou - texto
+    -->
+
+
+                        <!-- <select name="genre" id="genre">
+                        <option value="genre-non-binary">Não Binário</option>
+                        <option value="genre-male">Masculino</option>
+                        <option value="genre-female">Feminino</option>
+                    </select> -->
