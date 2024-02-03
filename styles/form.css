@@ -32,14 +32,21 @@ form {
     border-radius: 10px;
 }
 
-.form-input-box {
+.form-input-box,
+.form-input-box-internal {
     display: flex;
     flex-direction: column;
     gap: 8px;
 }
 
+.form-input-box-internal {
+    border: 1px solid #9b9b9b;
+    border-radius: 10px;
+    padding: 20px;
+}
+
 label {
-    font-size: 18px;
+    font-size: 17px;
     color: #555555;
     font-weight: 400;
 }
@@ -47,11 +54,13 @@ label {
 input[type="text"],
 input[type="number"],
 input[type="date"],
-input[type="file"] {
+input[type="file"],
+select,
+textarea {
     border: 1px solid #9b9b9b;
     border-radius: 5px;
     padding: 4px 7px;
-    font-size: 22px;
+    font-size: 18px;
     font-weight: 300;
     color: #555555;
 }
@@ -112,5 +121,9 @@ input[type="button"] {
 
 .ability-box:hover .fa-xmark {
     display: block;
+    width: fit-content;
+}
+
+.simple-button {
     width: fit-content;
 }

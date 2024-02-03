@@ -8,7 +8,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@400;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/681753a9b2.js" crossorigin="anonymous"></script>
-    <script src="scripts/form.js"></script>
+    <script src="scripts/abilities.js"></script>
+    <script src="scripts/formation.js"></script>
+    <script src="scripts/experience.js"></script>
     <title>Candidatura à Vaga de Emprego</title>
 </head>
 <body>
@@ -57,6 +59,69 @@
                     <div id="abilities-added-box" class="form-input-box-values"></div>
                     <input type="text" name="hidden-abilities" id="hidden-abilities">
                 </div>
+
+                <!-- PRESENTATION -->
+                <div class="form-input-box">
+                    <label for="presentation">Apresentação Resumida</label>
+                    <textarea name="presentation"
+                              id="presentation"
+                              cols="30"
+                              rows="10"
+                              placeholder="Descreva resumidamente suas principais habilidades e realizações">
+                    </textarea>
+                </div>
+
+                <!-- RESUME FILE -->
+                <div class="form-input-box">
+                    <label for="resume">Currículo</label>
+                    <input type="file" name="resume" id="resume">
+                </div>
+
+                <!-- FORMATION -->
+                <div class="form-input-box">
+                    <label for="formation">Formação Acadêmica</label>
+                    <input class="simple-button" type="button" value="+ Adicionar Formação">
+                    <div class="form-input-box-internal">
+
+                        <!-- INSTITUTION -->
+                        <div class="form-input-box">
+                            <label for="course-institution">Instituição</label>
+                            <input type="text" name="course-institution" id="course-institution">
+                        </div>
+
+                        <!-- COURSE-TYPE -->
+                        <div class="form-input-box">
+                            <label for="course-type">Tipo de Curso</label>
+                            <select name="course-type" id="course-type">
+                                <option value="post-doctoral">Pós-Doutorado</option>
+                                <option value="doctorate">Doutorado</option>
+                                <option value="masters">Mestrado</option>
+                                <option value="post-graduation">Pós-Graduação</option>
+                                <option value="graduation">Graduação</option>
+                                <option value="technician">Técnico</option>
+                            </select>
+                        </div>
+
+                        <!-- COURSE -->
+                        <div class="form-input-box">
+                            <label for="course-description">Curso</label>
+                            <input type="text" name="course-description" id="course-description">
+                        </div>
+
+                        <!-- START-DATE -->
+                        <div class="form-input-box">
+                            <label for="course-start-date">Data de Início</label>
+                            <input type="date" name="course-start-date" id="course-start-date">
+                        </div>
+
+                        <!-- FINISH-DATE -->
+                        <div class="form-input-box">
+                            <label for="course-finish-date">Data de Finalização</label>
+                            <input type="date" name="course-finish-date" id="course-finish-date">
+                        </div>
+                    </div>
+                </div>
+
             </form>
         </div>
     </section>
@@ -71,11 +136,7 @@
         Nome completo - texto
         Data de nascimento - data
         Gênero - radio
-
         Conhecimentos - Multiseleção
-        LinkedIn - texto
-        GitHub - texto
-        Portfólio - texto
         Apresentação resumida - textarea
         Curriculo - arquivo
         Educação - grupo
@@ -89,6 +150,9 @@
             Cargo - texto
             Início - data
             Término - data
+        LinkedIn - texto
+        GitHub - texto
+        Portfólio - texto
         Como ficou sabendo da vaga - seleção
         Possui indicação - radio
             Se sim
@@ -96,8 +160,4 @@
     -->
 
 
-                        <!-- <select name="genre" id="genre">
-                        <option value="genre-non-binary">Não Binário</option>
-                        <option value="genre-male">Masculino</option>
-                        <option value="genre-female">Feminino</option>
-                    </select> -->
+
