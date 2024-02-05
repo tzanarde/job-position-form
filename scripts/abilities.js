@@ -20,6 +20,7 @@ function addAbility(){
         let remove_icon = document.createElement('i');
         remove_icon.classList.add('fa-solid');
         remove_icon.classList.add('fa-xmark');
+        remove_icon.classList.add('pointer');
         remove_icon.setAttribute('onclick', 'removeAbility(event)');
 
         let ability_name = document.createElement('p');

@@ -15,161 +15,158 @@
     <title>Candidatura à Vaga de Emprego</title>
 </head>
 <body>
+    <section id="header-section">
+        <div id="header-container">
+            <h1 id="form-title">Desenvolvedor Full Stack Pleno</h1>
+            <h2 id="form-subtitle">Vaga para pessoa desenvolvedora full stack nível pleno.</h2>
+        </div>
+    </section>
     <section id="form-section">
         <div id="form-container">
             <form>
+                <div class="form-group-container">
+                    <h2 class="form-group-title">Informações Básicas</h2>
+                    <!-- NAME -->
+                    <div class="form-input-box">
+                        <label for="name">Nome Completo</label>
+                        <input type="text" name="name" id="name" minlength="1" maxlength="100" placeholder="Nome completo" required>
+                    </div>
 
-                <!-- NAME -->
-                <div class="form-input-box">
-                    <label for="name">Nome Completo</label>
-                    <input type="text" name="name" id="name" minlength="1" maxlength="100" placeholder="Nome completo" required>
-                </div>
+                    <!-- BIRTHDATE -->
+                    <div class="form-input-box">
+                        <label for="name">Data de Nascimento</label>
+                        <input type="date" name="birthdate" id="birthdate" required>
+                    </div>
 
-                <!-- BIRTHDATE -->
-                <div class="form-input-box">
-                    <label for="name">Data de Nascimento</label>
-                    <input type="date" name="birthdate" id="birthdate" required>
-                </div>
-
-                <!-- GENRE -->
-                <div class="form-input-box">
-                    <label for="name">Gênero</label>
-                    <div class="radio-input-box">
-                        <div class="radio-input-option-box">
-                            <input type="radio" name="genre" id="genre-non-binary">
-                            <label for="genre-non-binary">Não Binário</label>
+                    <!-- GENRE -->
+                    <div class="form-input-box">
+                        <label for="name">Gênero</label>
+                        <div class="radio-input-box">
+                            <div class="radio-input-option-box">
+                                <input type="radio" name="genre" id="genre-non-binary">
+                                <label for="genre-non-binary" class="radio-label">Não Binário</label>
+                            </div>
+                            <div class="radio-input-option-box">
+                                <input type="radio" name="genre" id="genre-male">
+                                <label for="genre-male" class="radio-label">Masculino</label>
+                            </div>
+                            <div class="radio-input-option-box">
+                                <input type="radio" name="genre" id="genre-female">
+                                <label for="genre-female" class="radio-label">Feminino</label>
+                            </div>
                         </div>
-                        <div class="radio-input-option-box">
-                            <input type="radio" name="genre" id="genre-male">
-                            <label for="genre-male">Masculino</label>
+                    </div>
+                </div>
+
+                <div class="form-group-container">
+                    <h2 class="form-group-title">Currículo</h2>
+                    <!-- ABILITIES -->
+                    <div class="form-input-box">
+                        <label for="abilities">Habilidades</label>
+                        <div class="form-input-box-2-column">
+                            <input type="text" name="abilities" id="abilities" placeholder="Digite um habilidade e clique em '+ Adicionar' ao lado" onkeypress="addAbilityClick(event)">
+                            <input class="simple-button" type="button" value="+ Adicionar" onclick="addAbility()">
                         </div>
-                        <div class="radio-input-option-box">
-                            <input type="radio" name="genre" id="genre-female">
-                            <label for="genre-female">Feminino</label>
+                        <div id="abilities-added-box" class="form-input-box-values"></div>
+                        <input type="text" name="hidden-abilities" id="hidden-abilities">
+                    </div>
+
+                    <!-- PRESENTATION -->
+                    <div class="form-input-box" id="form-input-box-presentation">
+                        <label for="presentation">Apresentação Resumida</label>
+                        <textarea name="presentation"
+                                id="presentation"
+                                cols="30"
+                                rows="10"
+                                minlength="1"
+                                maxlength="500"
+                                placeholder="Descreva resumidamente suas principais habilidades e realizações"
+                                onkeyup="presentationTextAreaLength()"></textarea>
+                        <p id="presentation-text-area-char-count">0/500</p>
+                    </div>
+
+                    <!-- RESUME FILE -->
+                    <div class="form-input-box">
+                        <label for="resume">Currículo</label>
+                        <input type="file" name="resume" id="resume">
+                    </div>
+
+                    <!-- LINKEDIN -->
+                    <div class="form-input-box">
+                        <label for="name">LinkedIn</label>
+                        <input type="text" name="linkedin" id="linkedin" minlength="1" maxlength="300" placeholder="Link para seu perfil do LinkedIn">
+                    </div>
+
+                    <!-- GITHUB -->
+                    <div class="form-input-box">
+                        <label for="name">GibHub</label>
+                        <input type="text" name="github" id="github" minlength="1" maxlength="300" placeholder="Link para seu perfil do GitHub">
+                    </div>
+
+                    <!-- PORTFOLIO -->
+                    <div class="form-input-box">
+                        <label for="name">Portólio</label>
+                        <input type="text" name="portfolio" id="portfolio" minlength="1" maxlength="300" placeholder="Link para seu portfólio">
+                    </div>
+                </div>
+
+                <div class="form-group-container">
+                    <h2 class="form-group-title">Formação Acadêmica</h2>
+                    <!-- FORMATION -->
+                    <div id="formation-container" class="form-input-box">
+                        <div class="form-input-box-2-column">
+                            <input class="simple-button" type="button" value="+ Adicionar Formação" onclick="addFormation()">
                         </div>
                     </div>
                 </div>
 
-                <!-- ABILITIES -->
-                <div class="form-input-box">
-                    <label for="abilities">Habilidades</label>
-                    <div class="form-input-box-2-column">
-                        <input type="text" name="abilities" id="abilities" onkeypress="addAbilityClick(event)">
-                        <input class="simple-button" type="button" value="+ Adicionar" onclick="addAbility()">
-                    </div>
-                    <div id="abilities-added-box" class="form-input-box-values"></div>
-                    <input type="text" name="hidden-abilities" id="hidden-abilities">
-                </div>
-
-                <!-- PRESENTATION -->
-                <div class="form-input-box">
-                    <label for="presentation">Apresentação Resumida</label>
-                    <textarea name="presentation"
-                              id="presentation"
-                              cols="30"
-                              rows="10"
-                              placeholder="Descreva resumidamente suas principais habilidades e realizações">
-                    </textarea>
-                </div>
-
-                <!-- RESUME FILE -->
-                <div class="form-input-box">
-                    <label for="resume">Currículo</label>
-                    <input type="file" name="resume" id="resume">
-                </div>
-
-                <!-- FORMATION -->
-                <div id="formation-container" class="form-input-box">
-                    <div class="form-input-box-2-column">
-                        <label for="formation">Formação Acadêmica</label>
-                        <input class="simple-button" type="button" value="+ Adicionar Formação" onclick="addFormation()">
+                <div class="form-group-container">
+                    <h2 class="form-group-title">Formação Acadêmica</h2>
+                    <!-- EXPERIENCE -->
+                    <div id="experience-container" class="form-input-box">
+                        <div class="form-input-box-2-column">
+                            <input class="simple-button" type="button" value="+ Adicionar Experiência" onclick="addExperience()">
+                        </div>
                     </div>
                 </div>
 
-                <!-- EXPERIENCE -->
-                <div id="experience-container" class="form-input-box">
-                    <div class="form-input-box-2-column">
-                        <label for="formation">Experiência Profissional</label>
-                        <input class="simple-button" type="button" value="+ Adicionar Experiência" onclick="addExperience()">
+                <div class="form-group-container">
+                    <!-- <h2 class="form-group-title">Outras Informações</h2> -->
+                    <!-- HOW DID YOU FIND OUT ABOUT THE POSITION? -->
+                    <div class="form-input-box">
+                        <label for="how-did-find-out">Como você ficou sabendo dessa vaga?</label>
+                        <select name="how-did-find-out" id="how-did-find-out">
+                            <option value="choose-an-option">Escolha uma opção</option>
+                            <option value="linkedin">LinkedIn</option>
+                            <option value="google">Google</option>
+                            <option value="facebook">Facebook</option>
+                            <option value="Instagram">Instagram</option>
+                            <option value="other">Outro</option>
+                        </select>
+                    </div>
+
+                    <!-- RECOMMENDATION -->
+                    <div class="form-input-box">
+                        <div class="form-input-box-2-column">
+                            <label for="name">Possui indicação para a vaga?</label>
+                            <input type="checkbox" name="recommendation" id="recommendation-checkbox" onclick="toggleRecommendationInputVisibility()">
+                        </div>
+                        <label for="name" class="recommendation hidden-element">Nome da pessoa que te recomendou</label>
+                        <input type="text" name="recommendation-name" id="recommendation-name" class="recommendation hidden-element" minlength="1" maxlength="100">
                     </div>
                 </div>
 
-                <!-- LINKEDIN -->
-                <div class="form-input-box">
-                    <label for="name">LinkedIn</label>
-                    <input type="text" name="linkedin" id="linkedin" minlength="1" maxlength="300" placeholder="Link para seu perfil do LinkedIn">
-                </div>
-
-                <!-- GITHUB -->
-                <div class="form-input-box">
-                    <label for="name">GibHub</label>
-                    <input type="text" name="github" id="github" minlength="1" maxlength="300" placeholder="Link para seu perfil do GitHub">
-                </div>
-
-                <!-- PORTFOLIO -->
-                <div class="form-input-box">
-                    <label for="name">Portólio</label>
-                    <input type="text" name="portfolio" id="portfolio" minlength="1" maxlength="300" placeholder="Link para seu portfólio">
-                </div>
-
-                <!-- HOW DID YOU FIND OUT ABOUT THE POSITION? -->
-                <div class="form-input-box">
-                    <label for="how-did-find-out">Como você ficou sabendo dessa vaga?</label>
-                    <select name="how-did-find-out" id="how-did-find-out">
-                        <option value="choose-an-option">Escolha uma opção</option>
-                        <option value="linkedin">LinkedIn</option>
-                        <option value="google">Google</option>
-                        <option value="facebook">Facebook</option>
-                        <option value="Instagram">Instagram</option>
-                        <option value="other">Outro</option>
-                    </select>
-                </div>
-
-                <!-- RECOMMENDATION -->
-                <div class="form-input-box">
-                    <div class="form-input-box-2-column">
-                        <label for="name">Possui indicação para a vaga?</label>
-                        <input type="checkbox" name="recommendation" id="recommendation-checkbox" onclick="toggleRecommendationInputVisibility()">
-                    </div>
-                    <label for="name" class="recommendation hidden-element">Nome da pessoa que te recomendou</label>
-                    <input type="text" name="recommendation-name" id="recommendation-name" class="recommendation hidden-element" minlength="1" maxlength="100">
+                <div class="form-input-box-right">
+                    <input type="submit" value="Enviar" class="simple-button confirm-button">
                 </div>
             </form>
         </div>
     </section>
+    <section id="footer-section">
+        <div id="footer-container">
+            <p id="footer-info">Copywrite 2024. Todas os direitos reservados.</p>
+            <p id="footer-info">Desenvolvidor para Tiago Zanarde por fins de estudo e portfólio.</p>
+        </div>
+    </section>
 </body>
 </html>
-
-
-
-
-
-<!--
-        Nome completo - texto
-        Data de nascimento - data
-        Gênero - radio
-        Conhecimentos - Multiseleção
-        Apresentação resumida - textarea
-        Curriculo - arquivo
-        Educação - grupo
-            Instituição - texto
-            Tipo - seleção
-            Curso - texto
-            Início - data
-            Término - data
-        Experiência profissional - grupo
-            Empresa - texto
-            Cargo - texto
-            Início - data
-            Término - data
-        LinkedIn - texto
-        GitHub - texto
-        Portfólio - texto
-        Como ficou sabendo da vaga - seleção
-        Possui indicação - radio
-            Se sim
-                Quem indicou - texto
-    -->
-
-
-

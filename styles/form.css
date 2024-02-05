@@ -6,7 +6,9 @@
 
 body {
     background-color: #ececec;
-    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
 }
 
 form {
@@ -15,10 +17,32 @@ form {
     gap: 30px;
 }
 
+#header-container {
+    width: 100%;
+    height: fit-content;
+    background-color: #3c68a4;
+    padding: 40px;
+    box-sizing: border-box;
+}
+
+#form-title {
+    color: #fff;
+    font-size: 32px;
+    font-weight: 500;
+}
+
+#form-subtitle {
+    color: #fff;
+    font-size: 15px;
+    font-weight: 300;
+}
+
 #form-section {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
+    width: 100%;
 }
 
 #form-container {
@@ -27,9 +51,35 @@ form {
     display: flex;
     flex-direction: column;
     height: fit-content;
-    width: 70%;
-    padding: 50px;
+    max-width: 1000px;
+    width: 75%;
+    padding: 25px;
     border-radius: 10px;
+}
+
+.form-group-container {
+    background-color: #f5f5f5;
+    border-radius: 5px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 30px;
+}
+
+.form-group-title {
+    font-size: 20px;
+    color: #555;
+    font-weight: 500;
+    border-bottom: 1px solid #cecece;
+    padding-bottom: 5px;
+}
+
+#formation-container,
+#experience-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
 }
 
 .form-input-box,
@@ -37,6 +87,12 @@ form {
     display: flex;
     flex-direction: column;
     gap: 8px;
+}
+
+.form-input-box-right {
+    display: flex;
+    justify-content: end;
+    margin-top: 30px;
 }
 
 .form-input-box-internal {
@@ -47,9 +103,15 @@ form {
 }
 
 label {
+    font-size: 18px;
+    color: #555555;
+    font-weight: 400;
+}
+
+.radio-label {
     font-size: 17px;
     color: #555555;
-    font-weight: 500;
+    font-weight: 300;
 }
 
 input[type="text"],
@@ -66,20 +128,33 @@ textarea {
     color: #555555;
 }
 
-input[type="button"] {
+input[type="button"],
+input[type="submit"] {
     border: 0px;
     border-radius: 5px;
     padding: 8px 10px;
     font-size: 18px;
     font-weight: 400;
-    background-color: #3c68a4;
     color: #fff;
+}
+
+#form-input-box-presentation {
+    position: relative;
+}
+
+#presentation-text-area-char-count {
+    color: #9b9b9b;
+    font-size: 14px;
+    font-weight: 100;
+    position: absolute;
+    right: 0;
+    bottom: -25px;
 }
 
 .radio-input-box {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 3px;
 }
 
 .radio-input-option-box {
@@ -120,14 +195,27 @@ input[type="button"] {
     display: none;
 }
 
+#abilities {
+    width: 100%;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
 .ability-box:hover .fa-xmark {
     display: block;
     width: fit-content;
 }
 
 .simple-button {
+    background-color: #3c68a4;
     width: fit-content;
     cursor: pointer;
+}
+
+.confirm-button {
+    background-color: #69d887;
 }
 
 .group-title {
@@ -138,4 +226,112 @@ input[type="button"] {
 
 .hidden-element {
     display: none;
+}
+
+#footer-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: fit-content;
+    background-color: #3c68a4;
+    padding: 20px 40px;
+    box-sizing: border-box;
+}
+
+#footer-info {
+    color: #fff;
+    font-size: 15px;
+    font-weight: 300;
+}
+
+/* RESPONSIVITY */
+
+@media screen and (max-width: 1200px) {
+    #form-container {
+        width: 85%;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    #form-container {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        gap: 25px;
+    }
+
+    #form-container {
+        width: 95%;
+        padding: 10px;
+    }
+
+    .form-group-container {
+        padding: 15px;
+        gap: 20px;
+    }
+
+    #formation-container,
+    #experience-container {
+        gap: 10px;
+    }
+
+    .form-input-box-right {
+        margin-top: 10px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    body {
+        gap: 15px;
+    }
+
+    #header-container {
+        padding: 20px;
+    }
+
+    form {
+        gap: 10px;
+    }
+
+    #form-title {
+        font-size: 22px;
+    }
+
+    #form-subtitle {
+        font-size: 12px;
+    }
+
+    label {
+        font-size: 16px;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    input[type="date"],
+    input[type="file"],
+    input[type="button"],
+    input[type="submit"],
+    select,
+    textarea {
+        font-size: 16px;
+    }
+
+    .radio-label {
+        font-size: 14px;
+    }
+
+    .form-group-title {
+        font-size: 18px;
+    }
+
+    .form-input-box {
+        gap: 2px;
+    }
+
+    .form-input-box-internal {
+        gap: 12px;
+    }
 }

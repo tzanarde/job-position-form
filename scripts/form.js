@@ -11,3 +11,10 @@ function toggleRecommendationInputVisibility() {
         recommendation_elements[1].value = '';
     }
 }
+
+function presentationTextAreaLength() {
+    let presentation_text_area = document.getElementById('presentation');
+    let presentation_text_area_char_count = document.getElementById('presentation-text-area-char-count');
+
+    presentation_text_area_char_count.innerText = presentation_text_area.value.length + '/500';
+}
